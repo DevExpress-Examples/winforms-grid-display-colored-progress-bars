@@ -28,7 +28,6 @@
             this.col4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.col5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -54,8 +53,7 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.col4,
-            this.col5,
-            this.col6});
+            this.col5});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -82,15 +80,6 @@
             this.col5.Name = "col5";
             this.col5.Visible = true;
             this.col5.VisibleIndex = 1;
-            // 
-            // col6
-            // 
-            this.col6.Caption = "Single RepositoryItem";
-            this.col6.ColumnEdit = this.repositoryItemProgressBar1;
-            this.col6.FieldName = "Column";
-            this.col6.Name = "col6";
-            this.col6.Visible = true;
-            this.col6.VisibleIndex = 2;
             // 
             // repositoryItemProgressBar1
             // 
@@ -123,7 +112,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn col4;
         private DevExpress.XtraGrid.Columns.GridColumn col5;
-        private DevExpress.XtraGrid.Columns.GridColumn col6;
         private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
     }

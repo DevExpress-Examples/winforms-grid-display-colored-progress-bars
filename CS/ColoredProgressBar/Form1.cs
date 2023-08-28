@@ -15,7 +15,6 @@ namespace ColoredProgressBar {
             gridControl1.DataSource = dt;
             CustomPaintedProgressBarHelper customPaintedProgressBarHelper = new CustomPaintedProgressBarHelper(col4);
             DRProgressBarHelper drHelper = new DRProgressBarHelper(col5);
-            SRProgressBarHelper srHelper = new SRProgressBarHelper(col6);
         }
     }
 }

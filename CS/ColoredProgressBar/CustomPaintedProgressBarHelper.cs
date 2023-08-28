@@ -1,7 +1,5 @@
-﻿using DevExpress.XtraEditors.Drawing;
-using DevExpress.XtraGrid.Columns;
+﻿using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System;
 using System.Drawing;
 
@@ -16,9 +14,8 @@ namespace ColoredProgressBar {
         }
         private void View_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e) {
             if (e.Column == _Column) {
-                e.DefaultDraw();
                 DrawProgressBar(e);
-                DrawEditor(e);
+                e.DefaultDraw();
                 e.Handled = true;
             }
         }
@@ -34,21 +31,7 @@ namespace ColoredProgressBar {
                 b = Brushes.Orange;
             else if (percent < 75)
                 b = Brushes.YellowGreen;
-            e.Cache.Paint.FillRectangle(e.Cache.Graphics, b, rect);
-        }
-        void DrawEditor(DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e) {
-            GridCellInfo cell = e.Cell as GridCellInfo;
-            Point offset = cell.CellValueRect.Location;
-            BaseEditPainter pb = cell.ViewInfo.Painter as BaseEditPainter;
-            if (!offset.IsEmpty)
-                cell.ViewInfo.Offset(offset.X, offset.Y);
-            try {
-                pb.Draw(new ControlGraphicsInfoArgs(cell.ViewInfo, e.Cache, cell.Bounds));
-            }
-            finally {
-                if (!offset.IsEmpty)
-                    cell.ViewInfo.Offset(-offset.X, -offset.Y);
-            }
+            e.Cache.FillRectangle(b, rect);
         }
     }
 }
