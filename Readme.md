@@ -7,9 +7,9 @@
 *Files to look at*:
 
 * [DifferentRepositoriesProgressBar.cs](./CS/ColoredProgressBar/DifferentRepositoriesProgressBar.cs) (VB: [DifferentRepositoriesProgressBar.vb](./VB/ColoredProgressBar/DifferentRepositoriesProgressBar.vb))
+* [CustomPaintedProgressBarHelper.cs](./CS/ColoredProgressBar/CustomPaintedProgressBarHelper.cs) (VB: [CustomPaintedProgressBarHelper.vb](./VB/ColoredProgressBar/CustomPaintedProgressBarHelper.vb))
 * [Form1.cs](./CS/ColoredProgressBar/Form1.cs) (VB: [Form1.vb](./VB/ColoredProgressBar/Form1.vb))
 * [Program.cs](./CS/ColoredProgressBar/Program.cs) (VB: [Program.vb](./VB/ColoredProgressBar/Program.vb))
-* [SingleRepositoryProgressBar.cs](./CS/ColoredProgressBar/SingleRepositoryProgressBar.cs) (VB: [SingleRepositoryProgressBar.vb](./VB/ColoredProgressBar/SingleRepositoryProgressBar.vb))
 <!-- default file list end -->
 # How to use different colored ProgressBar in GridControl
 
