@@ -1,7 +1,5 @@
-Imports DevExpress.XtraEditors.Drawing
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
-Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
 Imports System
 Imports System.Drawing
 
@@ -21,9 +19,8 @@ Namespace ColoredProgressBar
 
         Private Sub View_CustomDrawCell(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs)
             If e.Column Is _Column Then
-                e.DefaultDraw()
                 DrawProgressBar(e)
-                DrawEditor(e)
+                e.DefaultDraw()
                 e.Handled = True
             End If
         End Sub
@@ -42,19 +39,7 @@ Namespace ColoredProgressBar
                 b = Brushes.YellowGreen
             End If
 
-            e.Cache.Paint.FillRectangle(e.Cache.Graphics, b, rect)
-        End Sub
-
-        Private Sub DrawEditor(ByVal e As DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs)
-            Dim cell As GridCellInfo = TryCast(e.Cell, GridCellInfo)
-            Dim offset As Point = cell.CellValueRect.Location
-            Dim pb As BaseEditPainter = TryCast(cell.ViewInfo.Painter, BaseEditPainter)
-            If Not offset.IsEmpty Then cell.ViewInfo.Offset(offset.X, offset.Y)
-            Try
-                pb.Draw(New ControlGraphicsInfoArgs(cell.ViewInfo, e.Cache, cell.Bounds))
-            Finally
-                If Not offset.IsEmpty Then cell.ViewInfo.Offset(-offset.X, -offset.Y)
-            End Try
+            e.Cache.FillRectangle(b, rect)
         End Sub
     End Class
 End Namespace

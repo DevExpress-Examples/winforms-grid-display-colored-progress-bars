@@ -21,7 +21,6 @@ Namespace ColoredProgressBar
             gridControl1.DataSource = dt
             Dim customPaintedProgressBarHelper As CustomPaintedProgressBarHelper = New CustomPaintedProgressBarHelper(col4)
             Dim drHelper As DRProgressBarHelper = New DRProgressBarHelper(col5)
-            Dim srHelper As SRProgressBarHelper = New SRProgressBarHelper(col6)
         End Sub
     End Class
 End Namespace

@@ -30,7 +30,6 @@ Namespace ColoredProgressBar
             Me.col4 = New DevExpress.XtraGrid.Columns.GridColumn()
             Me.repositoryItemSpinEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
             Me.col5 = New DevExpress.XtraGrid.Columns.GridColumn()
-            Me.col6 = New DevExpress.XtraGrid.Columns.GridColumn()
             Me.repositoryItemProgressBar1 = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
             CType((Me.gridControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             CType((Me.gridView1), System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,7 +50,7 @@ Namespace ColoredProgressBar
             ' 
             ' gridView1
             ' 
-            Me.gridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col4, Me.col5, Me.col6})
+            Me.gridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col4, Me.col5})
             Me.gridView1.GridControl = Me.gridControl1
             Me.gridView1.Name = "gridView1"
             ' 
@@ -77,15 +76,6 @@ Namespace ColoredProgressBar
             Me.col5.Name = "col5"
             Me.col5.Visible = True
             Me.col5.VisibleIndex = 1
-            ' 
-            ' col6
-            ' 
-            Me.col6.Caption = "Single RepositoryItem"
-            Me.col6.ColumnEdit = Me.repositoryItemProgressBar1
-            Me.col6.FieldName = "Column"
-            Me.col6.Name = "col6"
-            Me.col6.Visible = True
-            Me.col6.VisibleIndex = 2
             ' 
             ' repositoryItemProgressBar1
             ' 
@@ -119,8 +109,6 @@ Namespace ColoredProgressBar
         Private col4 As DevExpress.XtraGrid.Columns.GridColumn
 
         Private col5 As DevExpress.XtraGrid.Columns.GridColumn
-
-        Private col6 As DevExpress.XtraGrid.Columns.GridColumn
 
         Private repositoryItemProgressBar1 As DevExpress.XtraEditors.Repository.RepositoryItemProgressBar
 
