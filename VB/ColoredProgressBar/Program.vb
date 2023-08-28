@@ -1,22 +1,18 @@
-﻿Imports DevExpress.XtraEditors
 Imports System
-Imports System.Collections.Generic
 Imports System.Windows.Forms
 
 Namespace ColoredProgressBar
-	Friend NotInheritable Class Program
 
-		Private Sub New()
-		End Sub
+    Friend Module Program
 
-		''' <summary>
-		''' The main entry point for the application.
-		''' </summary>
-		<STAThread> _
-		Shared Sub Main()
-			Application.EnableVisualStyles()
-			Application.SetCompatibleTextRenderingDefault(False)
-			Application.Run(New Form1())
-		End Sub
-	End Class
+        ''' <summary>
+        ''' The main entry point for the application.
+        ''' </summary>
+        <STAThread>
+        Sub Main()
+            Call Application.EnableVisualStyles()
+            Application.SetCompatibleTextRenderingDefault(False)
+            Call Application.Run(New Form1())
+        End Sub
+    End Module
 End Namespace

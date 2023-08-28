@@ -1,78 +1,76 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Text
+Imports DevExpress.XtraEditors.Repository
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
-Imports DevExpress.XtraGrid.Views.Base
-Imports DevExpress.XtraEditors.Repository
+Imports System
 Imports System.Drawing
 
 Namespace ColoredProgressBar
-	Friend Class DRProgressBarHelper
-		Private Column As GridColumn
-		Private View As GridView
 
-		Private prbLess25 As RepositoryItemProgressBar
-		Private prbLess50 As RepositoryItemProgressBar
-		Private prbLess75 As RepositoryItemProgressBar
-		Private prbLess100 As RepositoryItemProgressBar
+    Friend Class DRProgressBarHelper
 
-		Public Sub New(ByVal column As GridColumn)
-			PrbInit()
-			Me.Column = column
-			View = TryCast(Me.Column.View, GridView)
-			AddHandler View.CustomRowCellEdit, AddressOf View_CustomRowCellEdit
+        Private _Column As GridColumn
 
-		End Sub
-		Private Sub PrbInit()
-			prbLess25 = New RepositoryItemProgressBar()
-			prbLess25.StartColor = Color.Red
-			prbLess25.EndColor = Color.Red
-			prbLess25.ShowTitle = True
-			prbLess25.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid
-			prbLess25.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
-			prbLess25.LookAndFeel.UseDefaultLookAndFeel = False
+        Private _View As GridView
 
-			prbLess50 = New RepositoryItemProgressBar()
-			prbLess50.StartColor = Color.Orange
-			prbLess50.EndColor = Color.Orange
-			prbLess50.ShowTitle = True
-			prbLess50.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid
-			prbLess50.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
-			prbLess50.LookAndFeel.UseDefaultLookAndFeel = False
+        Private _prbLess25 As RepositoryItemProgressBar
 
-			prbLess75 = New RepositoryItemProgressBar()
-			prbLess75.StartColor = Color.YellowGreen
-			prbLess75.EndColor = Color.YellowGreen
-			prbLess75.ShowTitle = True
-			prbLess75.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid
-			prbLess75.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
-			prbLess75.LookAndFeel.UseDefaultLookAndFeel = False
+        Private _prbLess50 As RepositoryItemProgressBar
 
-			prbLess100 = New RepositoryItemProgressBar()
-			prbLess100.StartColor = Color.Green
-			prbLess100.EndColor = Color.Green
-			prbLess100.ShowTitle = True
-			prbLess100.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid
-			prbLess100.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
-			prbLess100.LookAndFeel.UseDefaultLookAndFeel = False
+        Private _prbLess75 As RepositoryItemProgressBar
 
-		End Sub
+        Private _prbLess100 As RepositoryItemProgressBar
 
-		Private Sub View_CustomRowCellEdit(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs)
-			If e.Column Is Column Then
-				Dim percent As Integer = Convert.ToInt16(e.CellValue)
-				If percent < 25 Then
-					e.RepositoryItem = prbLess25
-				ElseIf percent < 50 Then
-					e.RepositoryItem = prbLess50
-				ElseIf percent < 75 Then
-					e.RepositoryItem = prbLess75
-				ElseIf percent <= 100 Then
-					e.RepositoryItem = prbLess100
-				End If
-			End If
-		End Sub
+        Public Sub New(ByVal column As GridColumn)
+            PrbInit()
+            _Column = column
+            _View = TryCast(_Column.View, GridView)
+            AddHandler _View.CustomRowCellEdit, New CustomRowCellEditEventHandler(AddressOf View_CustomRowCellEdit)
+        End Sub
 
-	End Class
+        Private Sub PrbInit()
+            _prbLess25 = New RepositoryItemProgressBar()
+            _prbLess25.StartColor = Color.Red
+            _prbLess25.EndColor = Color.Red
+            _prbLess25.ShowTitle = True
+            _prbLess25.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid
+            _prbLess25.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
+            _prbLess25.LookAndFeel.UseDefaultLookAndFeel = False
+            _prbLess50 = New RepositoryItemProgressBar()
+            _prbLess50.StartColor = Color.Orange
+            _prbLess50.EndColor = Color.Orange
+            _prbLess50.ShowTitle = True
+            _prbLess50.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid
+            _prbLess50.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
+            _prbLess50.LookAndFeel.UseDefaultLookAndFeel = False
+            _prbLess75 = New RepositoryItemProgressBar()
+            _prbLess75.StartColor = Color.YellowGreen
+            _prbLess75.EndColor = Color.YellowGreen
+            _prbLess75.ShowTitle = True
+            _prbLess75.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid
+            _prbLess75.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
+            _prbLess75.LookAndFeel.UseDefaultLookAndFeel = False
+            _prbLess100 = New RepositoryItemProgressBar()
+            _prbLess100.StartColor = Color.Green
+            _prbLess100.EndColor = Color.Green
+            _prbLess100.ShowTitle = True
+            _prbLess100.ProgressViewStyle = DevExpress.XtraEditors.Controls.ProgressViewStyle.Solid
+            _prbLess100.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
+            _prbLess100.LookAndFeel.UseDefaultLookAndFeel = False
+        End Sub
+
+        Private Sub View_CustomRowCellEdit(ByVal sender As Object, ByVal e As CustomRowCellEditEventArgs)
+            If e.Column Is _Column Then
+                Dim percent As Integer = Convert.ToInt16(e.CellValue)
+                If percent < 25 Then
+                    e.RepositoryItem = _prbLess25
+                ElseIf percent < 50 Then
+                    e.RepositoryItem = _prbLess50
+                ElseIf percent < 75 Then
+                    e.RepositoryItem = _prbLess75
+                ElseIf percent <= 100 Then
+                    e.RepositoryItem = _prbLess100
+                End If
+            End If
+        End Sub
+    End Class
 End Namespace
