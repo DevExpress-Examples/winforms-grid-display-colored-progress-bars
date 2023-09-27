@@ -12,7 +12,7 @@ There are several ways to display colored progress bars within grid cells.
 
 ## Use RepositoryItemProgressBar objects and handle events
 
-Handle the [CustomRowCellEdit](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.CustomRowCellEdit) to assign different repository items ([RepositoryItemProgressBar](https://docs.devexpress.com/WindowsForms/DevExpress.XtraEditors.Repository.RepositoryItemProgressBar)) to data cells. Supports printing and data export.
+Handle the [CustomRowCellEdit](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.CustomRowCellEdit) event to assign different repository items ([RepositoryItemProgressBar](https://docs.devexpress.com/WindowsForms/DevExpress.XtraEditors.Repository.RepositoryItemProgressBar)) to data cells. Supports printing and data export.
 
 ```csharp
 void View_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e) {
@@ -58,7 +58,7 @@ void DrawProgressBar(DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e
 }
 ```
 
-## Files to Reivew
+## Files to Review
 
 * [DifferentRepositoriesProgressBar.cs](./CS/ColoredProgressBar/DifferentRepositoriesProgressBar.cs) (VB: [DifferentRepositoriesProgressBar.vb](./VB/ColoredProgressBar/DifferentRepositoriesProgressBar.vb))
 * [CustomPaintedProgressBarHelper.cs](./CS/ColoredProgressBar/CustomPaintedProgressBarHelper.cs) (VB: [CustomPaintedProgressBarHelper.vb](./VB/ColoredProgressBar/CustomPaintedProgressBarHelper.vb))
