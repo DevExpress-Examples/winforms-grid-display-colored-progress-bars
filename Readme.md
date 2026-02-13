@@ -76,7 +76,7 @@ void DrawProgressBar(DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e
 
 * [Replace Default Cell Editors - Cheat Sheets and Best Practices](https://supportcenter.devexpress.com/ticket/details/t923817/replace-default-cell-editors-winforms-cheat-sheet)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-grid-display-colored-progress-bars&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-grid-display-colored-progress-bars&~~~was_helpful=no)
 
