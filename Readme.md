@@ -7,7 +7,7 @@
 
 # WinForms Data Grid - Display colored progress bars
 
-![](https://raw.githubusercontent.com/DevExpress-Examples/how-to-use-different-colored-progressbar-in-gridcontrol-e3193/23.1.3%2B/media/winforms-grid-custom-progress-bar.png)
+![WinForms Data Grid - Display colored progress bars](media/winforms-grid-custom-progress-bar.png)
 
 There are several ways to display colored progress bars within grid cells.
 
@@ -82,3 +82,4 @@ void DrawProgressBar(DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
